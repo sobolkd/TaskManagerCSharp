@@ -1,0 +1,77 @@
+﻿<Window x:Class="ShedewroTaskManager.TaskManager"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+        xmlns:local="clr-namespace:ShedewroTaskManager"
+        mc:Ignorable="d"
+        Height="600" 
+        Width="900"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        >
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles/Buttons.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Border Background="#E7E5E5" CornerRadius="30" BorderThickness="0.3">
+        <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+        <!--Left column-->
+            <lvc:PieChart Grid.Column="0" Name="ProcPieChart" LegendLocation="Bottom" Height="200" Width="300" Margin="0 40 0 0" HorizontalAlignment="Center" VerticalAlignment="Top" Visibility="Collapsed">
+                <lvc:PieChart.Series>
+                    <lvc:PieSeries Title="Series 1" Values="10" />
+                    <lvc:PieSeries Title="Series 2" Values="20" />
+                    <lvc:PieSeries Title="Series 3" Values="30" />
+                </lvc:PieChart.Series>
+            </lvc:PieChart>
+            <TextBlock x:Name="RAM" Grid.Column="0" Text="RAM" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Margin="0 360 0 0" Visibility="Collapsed"/>
+            <lvc:PieChart Grid.Column="0" Name="RAMPieChart" LegendLocation="Bottom" Height="200" Width="300" HorizontalAlignment="Center" VerticalAlignment="Bottom" Visibility="Collapsed">
+                <lvc:PieChart.Series>
+                    <lvc:PieSeries Title="Series 1" Values="10" />
+                    <lvc:PieSeries Title="Series 2" Values="20" />
+                    <lvc:PieSeries Title="Series 3" Values="30" />
+                </lvc:PieChart.Series>
+            </lvc:PieChart>
+        <!--Left column-->
+            
+        <!--Center column-->
+            <TextBlock x:Name="Loading" Grid.Column="1" Visibility="Visible" Text="Loading..." HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40"/>
+            <TextBlock Grid.Column="1" Text="ShedewroTaskManager" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Verdana" FontWeight="Bold" FontSize="20" Margin="10"></TextBlock>
+            <TextBlock x:Name="ProcInfo"  Grid.Column="1" Margin="0 40 0 0" Visibility="Collapsed"/>
+        <!--Center column-->
+            
+        <!--Right column-->
+            <Button Click="ExitButton_Click" Grid.Column="2" Style="{StaticResource ExitButtonStyle}"/>
+            <Button Click="MinimizeButton_Click" Grid.Column="2" Style="{StaticResource ExitButtonStyle}" Margin="0 10 70 0" Content="__"/>
+            <lvc:PieChart Grid.Column="2" Name="GraphicsCardPieChart" LegendLocation="Bottom" Height="200" Width="300" Margin="0 40 0 0" HorizontalAlignment="Center" VerticalAlignment="Top" Visibility="Collapsed">
+                <lvc:PieChart.Series>
+                    <lvc:PieSeries Title="Series 1" Values="10" />
+                    <lvc:PieSeries Title="Series 2" Values="20" />
+                    <lvc:PieSeries Title="Series 3" Values="30" />
+                </lvc:PieChart.Series>
+            </lvc:PieChart>
+            <lvc:PieChart Grid.Column="2" Name="NetworkPieChart" LegendLocation="Bottom" Height="200" Width="300" HorizontalAlignment="Center" VerticalAlignment="Bottom" Visibility="Collapsed">
+                <lvc:PieChart.Series>
+                    <lvc:PieSeries Title="Series 1" Values="10" />
+                    <lvc:PieSeries Title="Series 2" Values="20" />
+                    <lvc:PieSeries Title="Series 3" Values="30" />
+                </lvc:PieChart.Series>
+            </lvc:PieChart>
+        <!--Right column-->
+        </Grid>
+    </Border>
+    
+</Window>

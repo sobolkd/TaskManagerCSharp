@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34714.143
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShedewroTaskManager", "ShedewroTaskManager\ShedewroTaskManager.csproj", "{B410DA2D-2C97-4BE7-A65A-039D0F2D3771}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B410DA2D-2C97-4BE7-A65A-039D0F2D3771}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B410DA2D-2C97-4BE7-A65A-039D0F2D3771}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B410DA2D-2C97-4BE7-A65A-039D0F2D3771}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B410DA2D-2C97-4BE7-A65A-039D0F2D3771}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1FD9816D-64C3-4B34-B0C6-965332CDF6E7}
+	EndGlobalSection
+EndGlobal

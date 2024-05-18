@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Management;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Threading;
 using System.Windows;
 using LiveCharts;
 using LiveCharts.Definitions.Charts;
@@ -17,8 +18,17 @@ namespace ShedewroTaskManager
         {
             InitializeComponent();
             WaitForData();
+            Cycle();
         }
-
+        private async void Cycle()
+        {
+            while (true) 
+            {
+                await Task.Delay(5000);
+                SetCpuUsage();
+                SetRamUsage();
+            }
+        }
         private async void WaitForData()
         {
             Loading.Visibility = Visibility.Visible;
@@ -27,8 +37,9 @@ namespace ShedewroTaskManager
             {
                 GetInfoProc();
                 SetRamUsage();
+                SetCpuUsage();
             });
-       
+            await Task.Delay(1000);
             Loading.Visibility = Visibility.Collapsed;
             ProcInfo.Visibility = Visibility.Visible;
             RAMPieChart.Visibility = Visibility.Visible;
@@ -36,7 +47,42 @@ namespace ShedewroTaskManager
             NetworkPieChart.Visibility = Visibility.Visible;
             GraphicsCardPieChart.Visibility = Visibility.Visible;
             RAM.Visibility = Visibility.Visible;
+            CPU.Visibility = Visibility.Visible;
         }
+        private async Task SetCpuUsage()
+        {
+            // Create a PerformanceCounter to get CPU usage
+            PerformanceCounter cpuCounter = new PerformanceCounter("Processor", "% Processor Time", "_Total");
+
+            // First reading (initialization)
+            cpuCounter.NextValue();
+            await Task.Delay(1000); // Wait a second to get a valid reading
+
+            // Second reading (actual value)
+            float cpuUsage = cpuCounter.NextValue();
+
+            // Use Dispatcher to update the UI
+            Dispatcher.Invoke(() =>
+            {
+                SeriesCollection seriesCollection = new SeriesCollection();
+
+                seriesCollection.Add(new PieSeries
+                {
+                    Title = $"Processor load {cpuUsage:F2}%",
+                    Values = new ChartValues<double> { cpuUsage }
+                });
+
+                float freeCpu = 100 - cpuUsage;
+                seriesCollection.Add(new PieSeries
+                {
+                    Title = $"Amount of free space {freeCpu:F2}%",
+                    Values = new ChartValues<double> { freeCpu }
+                });
+
+                ProcPieChart.Series = seriesCollection;
+            });
+        }
+
         private void GetInfoProc()
         {
             StringBuilder resultBuilder = new StringBuilder();
@@ -76,15 +122,21 @@ namespace ShedewroTaskManager
                 ProcInfo.Text = resultBuilder.ToString();
             });
         }
-
-        private void SetRamUsage()
+        private async void SetRamUsage()
         {
-            PerformanceCounter ramCounter = new PerformanceCounter("Memory", "Committed Bytes");
+            // Get total physical memory
+            ulong totalMemoryBytes = 0;
+            using (ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT TotalVisibleMemorySize FROM Win32_OperatingSystem"))
+            {
+                foreach (ManagementObject obj in searcher.Get())
+                {
+                    totalMemoryBytes = (ulong)obj["TotalVisibleMemorySize"] * 1024; // Value in KB, converting to bytes
+                }
+            }
+            await Task.Delay(1000); // Wait a second to get a valid reading
+            // Get available memory
             PerformanceCounter availableCounter = new PerformanceCounter("Memory", "Available Bytes");
-
-            // Get info about RAM
-            long totalMemoryBytes = (long)ramCounter.NextValue();
-            long availableMemoryBytes = (long)availableCounter.NextValue();
+            ulong availableMemoryBytes = (ulong)availableCounter.RawValue;
 
             // Convert in MB
             double totalMemory = totalMemoryBytes / (1024.0 * 1024.0);
@@ -97,18 +149,16 @@ namespace ShedewroTaskManager
             {
                 seriesCollection.Add(new PieSeries
                 {
-                    Title = $"Available memory {availableMemory} (MB)",
+                    Title = $"Available memory {availableMemory:F2} MB",
                     Values = new ChartValues<double> { availableMemory }
                 });
                 seriesCollection.Add(new PieSeries
                 {
-                    Title = $"Used memory {usedMemory} (MB)",
+                    Title = $"Used memory {usedMemory:F2} MB",
                     Values = new ChartValues<double> { usedMemory }
                 });
                 RAMPieChart.Series = seriesCollection;
             });
-
-            
         }
         private void ExitButton_Click(object sender, RoutedEventArgs e)
         {

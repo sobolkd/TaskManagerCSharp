@@ -25,3 +25,4 @@ C:\Navchannya\3.2\КУРСОВА СПЗ\ShedewroTaskManager\ShedewroTaskManager\
 C:\Navchannya\3.2\КУРСОВА СПЗ\ShedewroTaskManager\ShedewroTaskManager\obj\Debug\net8.0-windows\Shedewro.A17FDFBA.Up2Date
 C:\Navchannya\3.2\КУРСОВА СПЗ\ShedewroTaskManager\ShedewroTaskManager\bin\Debug\net8.0-windows\LiveCharts.dll
 C:\Navchannya\3.2\КУРСОВА СПЗ\ShedewroTaskManager\ShedewroTaskManager\bin\Debug\net8.0-windows\LiveCharts.Wpf.dll
+C:\Navchannya\3.2\КУРСОВА СПЗ\ShedewroTaskManager\ShedewroTaskManager\obj\Debug\net8.0-windows\ShedewroTaskManager.sourcelink.json

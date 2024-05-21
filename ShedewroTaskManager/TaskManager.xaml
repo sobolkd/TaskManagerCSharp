@@ -29,8 +29,8 @@
                 <ColumnDefinition Width="300"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-        <!--Left column-->
-            <TextBlock x:Name="CPU" Grid.Column="0" Text="CPU" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Margin="0 10 0 0" Visibility="Collapsed"/>
+            <!--Left column-->
+            <TextBlock x:Name="CPU" Text="CPU" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,245,0,0" Visibility="Collapsed"/>
             <lvc:PieChart Grid.Column="0" Name="ProcPieChart" LegendLocation="Bottom" Height="200" Width="300" Margin="0 40 0 0" HorizontalAlignment="Center" VerticalAlignment="Top" Visibility="Collapsed">
                 <lvc:PieChart.Series>
                     <lvc:PieSeries Title="Series 1" Values="10" />
@@ -46,24 +46,39 @@
                     <lvc:PieSeries Title="Series 3" Values="30" />
                 </lvc:PieChart.Series>
             </lvc:PieChart>
-        <!--Left column-->
-            
-        <!--Center column-->
+            <Button Style="{StaticResource ExitButtonStyle}" Grid.Column="0" Margin="0 10 230 0" Width="60" Content="Back" Name="BackButton" Click="BackButton_Click" Visibility="Collapsed"/>
+            <!--Left column-->
+
+            <!--Center column-->
             <TextBlock x:Name="Loading" Grid.Column="1" Visibility="Visible" Text="Loading..." HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40"/>
             <TextBlock Grid.Column="1" Text="ShedewroTaskManager" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Verdana" FontWeight="Bold" FontSize="20" Margin="10"></TextBlock>
             <TextBlock x:Name="ProcInfo"  Grid.Column="1" Margin="0 40 0 0" Visibility="Collapsed"/>
-        <!--Center column-->
-            
-        <!--Right column-->
+            <Button Style="{StaticResource ExitButtonStyle}" Margin="0,35,0,0" Grid.Column="1" HorizontalAlignment="Center" Content="End process" Width="200" Name="EndProcess_Button" Click="EndProcessButton_CLick" Visibility="Collapsed"/>
+            <DataGrid x:Name="processesDataGrid" SelectionChanged="processesDataGrid_SelectionChanged" AutoGenerateColumns="False" Margin="0,90,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.ColumnSpan="3" Width="889" Visibility="Collapsed">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Process Name" Binding="{Binding Name}" Width="*" />
+                    <DataGridTextColumn Header="CPU Usage" Binding="{Binding CpuUsage}" Width="200" />
+                    <DataGridTextColumn Header="Memory Usage MB" Binding="{Binding MemoryUsage}" Width="200" />
+                </DataGrid.Columns>
+            </DataGrid>
+
+
+            <Button Name="ShowProcessesButton" Click="ShowProcess_Click" Style="{StaticResource ExitButtonStyle}" Grid.Column="1" Margin="0 550 0 0" HorizontalAlignment="Center" Content="Show Processes" Width="200" Visibility="Collapsed"></Button>
+            <!--Center column-->
+
+            <!--Right column-->
+            <Button Click="CreatedBy_Click" Grid.Column="2" Style="{StaticResource ExitButtonStyle}" Margin="0 10 130 0" Content="?"/>
             <Button Click="ExitButton_Click" Grid.Column="2" Style="{StaticResource ExitButtonStyle}"/>
             <Button Click="MinimizeButton_Click" Grid.Column="2" Style="{StaticResource ExitButtonStyle}" Margin="0 10 70 0" Content="__"/>
-            <lvc:PieChart Grid.Column="2" Name="GraphicsCardPieChart" LegendLocation="Bottom" Height="200" Width="300" Margin="0 40 0 0" HorizontalAlignment="Center" VerticalAlignment="Top" Visibility="Collapsed">
+            <TextBlock x:Name="Disk" Grid.Column="2" Text="Disk" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,245,0,0" Visibility="Collapsed"/>
+            <lvc:PieChart Grid.Column="2" Name="DiscPieChart" LegendLocation="Bottom" Height="200" Width="300" Margin="0 40 0 0" HorizontalAlignment="Center" VerticalAlignment="Top" Visibility="Collapsed">
                 <lvc:PieChart.Series>
                     <lvc:PieSeries Title="Series 1" Values="10" />
                     <lvc:PieSeries Title="Series 2" Values="20" />
                     <lvc:PieSeries Title="Series 3" Values="30" />
                 </lvc:PieChart.Series>
             </lvc:PieChart>
+            <TextBlock x:Name="Network" Grid.Column="2" Text="Network" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Margin="0 360 0 0" Visibility="Collapsed"/>
             <lvc:PieChart Grid.Column="2" Name="NetworkPieChart" LegendLocation="Bottom" Height="200" Width="300" HorizontalAlignment="Center" VerticalAlignment="Bottom" Visibility="Collapsed">
                 <lvc:PieChart.Series>
                     <lvc:PieSeries Title="Series 1" Values="10" />
@@ -71,8 +86,8 @@
                     <lvc:PieSeries Title="Series 3" Values="30" />
                 </lvc:PieChart.Series>
             </lvc:PieChart>
-        <!--Right column-->
+            <!--Right column-->
         </Grid>
     </Border>
-    
+
 </Window>

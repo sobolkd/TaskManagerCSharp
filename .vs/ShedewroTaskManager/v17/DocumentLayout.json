@@ -9,14 +9,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{B410DA2D-2C97-4BE7-A65A-039D0F2D3771}|ShedewroTaskManager\\ShedewroTaskManager.csproj|C:\\Navchannya\\3.2\\\u041A\u0423\u0420\u0421\u041E\u0412\u0410 \u0421\u041F\u0417\\ShedewroTaskManager\\shedewrotaskmanager\\taskmanager.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{B410DA2D-2C97-4BE7-A65A-039D0F2D3771}|ShedewroTaskManager\\ShedewroTaskManager.csproj|solutionrelative:shedewrotaskmanager\\taskmanager.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B410DA2D-2C97-4BE7-A65A-039D0F2D3771}|ShedewroTaskManager\\ShedewroTaskManager.csproj|C:\\Navchannya\\3.2\\\u041A\u0423\u0420\u0421\u041E\u0412\u0410 \u0421\u041F\u0417\\ShedewroTaskManager\\shedewrotaskmanager\\models\\ramusageinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B410DA2D-2C97-4BE7-A65A-039D0F2D3771}|ShedewroTaskManager\\ShedewroTaskManager.csproj|solutionrelative:shedewrotaskmanager\\models\\ramusageinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B410DA2D-2C97-4BE7-A65A-039D0F2D3771}|ShedewroTaskManager\\ShedewroTaskManager.csproj|C:\\Navchannya\\3.2\\\u041A\u0423\u0420\u0421\u041E\u0412\u0410 \u0421\u041F\u0417\\ShedewroTaskManager\\shedewrotaskmanager\\models\\graphicscardinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B410DA2D-2C97-4BE7-A65A-039D0F2D3771}|ShedewroTaskManager\\ShedewroTaskManager.csproj|solutionrelative:shedewrotaskmanager\\models\\graphicscardinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,32 +18,21 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "GraphicsCardInfo.cs",
-              "DocumentMoniker": "C:\\Navchannya\\3.2\\\u041A\u0423\u0420\u0421\u041E\u0412\u0410 \u0421\u041F\u0417\\ShedewroTaskManager\\ShedewroTaskManager\\Models\\GraphicsCardInfo.cs",
-              "RelativeDocumentMoniker": "ShedewroTaskManager\\Models\\GraphicsCardInfo.cs",
-              "ToolTip": "C:\\Navchannya\\3.2\\\u041A\u0423\u0420\u0421\u041E\u0412\u0410 \u0421\u041F\u0417\\ShedewroTaskManager\\ShedewroTaskManager\\Models\\GraphicsCardInfo.cs",
-              "RelativeToolTip": "ShedewroTaskManager\\Models\\GraphicsCardInfo.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 0,
+              "Title": "TaskManager.xaml.cs",
+              "DocumentMoniker": "C:\\Navchannya\\3.2\\\u041A\u0423\u0420\u0421\u041E\u0412\u0410 \u0421\u041F\u0417\\ShedewroTaskManager\\ShedewroTaskManager\\TaskManager.xaml.cs",
+              "RelativeDocumentMoniker": "ShedewroTaskManager\\TaskManager.xaml.cs",
+              "ToolTip": "C:\\Navchannya\\3.2\\\u041A\u0423\u0420\u0421\u041E\u0412\u0410 \u0421\u041F\u0417\\ShedewroTaskManager\\ShedewroTaskManager\\TaskManager.xaml.cs",
+              "RelativeToolTip": "ShedewroTaskManager\\TaskManager.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-08T14:29:26.987Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "RamUsageInfo.cs",
-              "DocumentMoniker": "C:\\Navchannya\\3.2\\\u041A\u0423\u0420\u0421\u041E\u0412\u0410 \u0421\u041F\u0417\\ShedewroTaskManager\\ShedewroTaskManager\\Models\\RamUsageInfo.cs",
-              "RelativeDocumentMoniker": "ShedewroTaskManager\\Models\\RamUsageInfo.cs",
-              "ToolTip": "C:\\Navchannya\\3.2\\\u041A\u0423\u0420\u0421\u041E\u0412\u0410 \u0421\u041F\u0417\\ShedewroTaskManager\\ShedewroTaskManager\\Models\\RamUsageInfo.cs",
-              "RelativeToolTip": "ShedewroTaskManager\\Models\\RamUsageInfo.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABwAAACdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-06T11:46:51.185Z"
+              "WhenOpened": "2024-04-06T14:41:53.264Z",
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -63,19 +44,6 @@
               "RelativeToolTip": "ShedewroTaskManager\\TaskManager.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-04-07T23:01:30.364Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "TaskManager.xaml.cs",
-              "DocumentMoniker": "C:\\Navchannya\\3.2\\\u041A\u0423\u0420\u0421\u041E\u0412\u0410 \u0421\u041F\u0417\\ShedewroTaskManager\\ShedewroTaskManager\\TaskManager.xaml.cs",
-              "RelativeDocumentMoniker": "ShedewroTaskManager\\TaskManager.xaml.cs",
-              "ToolTip": "C:\\Navchannya\\3.2\\\u041A\u0423\u0420\u0421\u041E\u0412\u0410 \u0421\u041F\u0417\\ShedewroTaskManager\\ShedewroTaskManager\\TaskManager.xaml.cs",
-              "RelativeToolTip": "ShedewroTaskManager\\TaskManager.xaml.cs",
-              "ViewState": "AQIAABgAAAAAAAAAAAAAAC0AAAA5AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-06T14:41:53.264Z",
               "EditorCaption": ""
             }
           ]
